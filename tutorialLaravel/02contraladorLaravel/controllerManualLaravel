@@ -1,0 +1,48 @@
+app/Http/Controllers/fooController.php
+
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class PruebasController extends Controller
+{
+    //
+}
+
+
+Creacion controller mediante consola:
+
+
+php artisan make:controller nombre-controlador   ( metodos predefinido)
+
+php artisan make:controller nombre-controlador --plain   (sin metodos definidos)
+
+
+RUTAS CONTROLLER
+
+/app/Http/routes.php  (anonima)
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+Route::get('notes', 'NotesController@index'); (controlador)
+
+
+ver rutas creadas en proyecto:   php artisan route:list
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    //return view('welcome');
+    echo "<h1>hola mundo</h1>";
+});
+
+/*
+ * GET: conseguir datos
+ * POST: gauardar datos
+ * PUT: actualizar recursos
+ * delete: eliminar
+ */
+
+Route::get('/mostrar-fecha', function(){
+    $titulo ="Estoy mostrando la fecha";
+    return view('mostrar-fecha',array ('titulo'=>$titulo));
+});
+//pelicula/{titulo?} opcional sino sin ?
+/*
+Route::get('/pelicula/{titulo?}',function($titulo = "censurado"){
+    
+    return view('pelicula', array(
+        'titulo' => $titulo
+    ));
+
+    
+});
+*/
+
+
+//'[a-z]+' solo letras repetidas infinatamente
+Route::get('/pelicula/{titulo}/{year?}',function($titulo = "censurado",$year=2020){
+    
+    return view('pelicula', array(
+        'titulo' => $titulo,
+         'year' => $year   
+    ));
+})->where(array(
+    'titulo'=> '[a-zA-Z]+',
+    'year' => '[0-9]+'
+));
+
+
+//Ejemplo basico de comandos blade
+Route::get('/listado-peliculas',function(){
+    $titulo = "Listado de peliculas";
+    $listado = array("virgenes","anal","candy");
+    //peliculas.listado == peliculas/Listado
+    return view ('peliculas.listado')
+                ->with('titulo',$titulo)
+                ->with('listado',$listado);
+});
+
+//Ejemplo plantillas base blade
+Route::get('/pagina-generica',function(){
+    
+    return view('pagina');
+});

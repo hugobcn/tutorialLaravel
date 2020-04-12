@@ -1,0 +1,19 @@
+app/routes/
+
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+
+
+
+
+Route::get('/', function () {
+    //return view('welcome');
+    echo "<h1>hola mundo</h1>";
+});
+
+
+
+
+Route::get('/redigir', 'PeliculaController@redigir');

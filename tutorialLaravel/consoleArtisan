@@ -1,0 +1,5 @@
+//consola php artisan help
+//consola php artisan list
+//  php artisan route:list  ver rutas hechas
+// php artisan make:controller PruebasController   crear controlador
+

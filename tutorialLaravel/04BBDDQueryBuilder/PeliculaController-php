@@ -1,0 +1,26 @@
+app/Http/Controllers
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class PeliculaController extends Controller
+{
+   public function index(){
+       $titulo ='Listado de peliculas';
+       
+       return view('pelicula.index',[
+           'titulo'=>$titulo
+       ]);
+   }
+
+public function detalle($year = null){
+       return view('pelicula.detalle');
+   }
+
+
+
+
+

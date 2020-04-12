@@ -1,0 +1,8 @@
+app/routes/
+
+
+//utilizar controlardor especicifo y metodo especifico
+Route::get('/pelicula/{pagina?}', 'PeliculaController@index');
+
+//llamar directamente a metodo
+Route::get('/detalle', 'PeliculaController@detalle');

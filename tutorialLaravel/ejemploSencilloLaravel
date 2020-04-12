@@ -1,0 +1,57 @@
+views/includes/footer.blade.php
+
+
+{{--INCLUDE CABEZERA carpeta.archivo--}}
+@include ('includes.header')
+
+{{--blade imprimir--}}
+<h1>{{$titulo}}</h1>
+<h2>{{$listado[2]}}</h2>
+<p>{{ date('Y') }} </p>
+
+{{--condicional  blade --}}
+
+{{ $director ?? 'No hay director' }}
+
+
+<br><hr><br>
+
+
+{{--blade estructura condicionales--}}
+
+@if ($titulo  && count($listado) >= 5)
+    Titulo existe: {{$titulo}} y listado de 5
+@elseif ($titulo)
+    <h3>Titulo existe: {{$titulo}}</h3>
+@else 
+    KO, titulo no existed   
+@endif
+
+<br><hr><br>
+
+{{--blade loop--}}
+<?php $contador = 1 ?>
+@while ($contador < 10)
+    @if ($contador % 2 == 0)
+        {{$contador}}
+        <br>
+    @endif
+    <?php $contador++; ?>
+@endwhile
+
+<br><hr><br>
+<lu>
+    @foreach ($listado as $pelicula)
+    
+    <li>{{$pelicula}}</li> 
+
+@endforeach
+    
+</lu>
+
+<br>
+
+{{--INCLUDE pie carpeta.archivo--}}
+@include ('includes.footer')
+
+

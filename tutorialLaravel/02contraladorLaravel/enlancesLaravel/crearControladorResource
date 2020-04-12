@@ -1,0 +1,4 @@
+Crear controlador resouce para llamar a diferentes metodos a ala vez:
+php artisan make:controller UsuarioController --resource
+
+

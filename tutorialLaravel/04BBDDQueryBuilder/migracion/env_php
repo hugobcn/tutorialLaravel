@@ -1,0 +1,20 @@
+app/
+
+or 
+
+app/config/database.php  ( meter mano directectament)
+
+APP_NAME=Laravel
+APP_ENV=local
+APP_KEY=base64:DjdL1rJ5lXyLPYmD8cm0OOr/ea/SvLxd+3FZ74D7y58=
+APP_DEBUG=true
+APP_URL=http://aprendiendo-laravel.com/
+
+LOG_CHANNEL=stack
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=fruteria_master
+DB_USERNAME=admin
+DB_PASSWORD=admin

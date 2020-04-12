@@ -1,0 +1,2 @@
+php artisan make:seed frutas_seed 
+

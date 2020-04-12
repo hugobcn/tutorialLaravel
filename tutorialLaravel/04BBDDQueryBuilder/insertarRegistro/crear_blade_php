@@ -1,0 +1,22 @@
+App\resources\views\fruta
+
+<h1>CrearFruta</h1>
+
+<form action ="{{action('FrutasController@save')}}" method="POST">
+         <!--funcion seguridad imprescindible sino aparace expired-->
+         {{csrf_field()}}
+    <label for ="nombre">Nombre</label>
+    <input type="text" name="nombre" placeholder="nombre">
+    <br>
+    <label for ="descripcion">descripcion</label>
+    <input name="descripcion" placeholder="descripcion">
+    <br>
+  
+    <label for ="precio">precio</label>
+    <input type="text" name="precio" placeholder="0">
+     <br>
+     <br>
+
+    <input type="submit" value="guardar">
+    
+</form>

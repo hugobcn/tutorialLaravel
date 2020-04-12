@@ -1,0 +1,17 @@
+@extends ('layouts.master')
+
+@section('titulo','Master en Laravel')
+
+{{--heredar y añadir contenido con @parent se añade y no solo modificar--}}
+
+@section('header')
+@parent()
+<h2>hola</h2>
+{{--parar contenido en ese bloque yque vaya al siguiente --}}
+@stop
+
+
+@section('content')
+<h1>Contenido de la pagina generica</h1>
+{{--parar contenido en ese bloque y que pueda entrar pie pagina de plantilla master --}}
+@stop

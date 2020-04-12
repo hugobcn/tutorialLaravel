@@ -1,0 +1,25 @@
+app/routes/
+
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+
+
+
+
+Route::get('/', function () {
+    //return view('welcome');
+    echo "<h1>hola mundo</h1>";
+});
+
+
+
+
+Route::get('/redigir', 'PeliculaController@redigir');
+
+//middlewae o filtro condicion si se puede ejecutar o no
+Route::get('/detalle/{year?}',[
+    'uses' => 'PeliculaController@detalle',
+    'as' => 'detalle.pelicula'
+]);

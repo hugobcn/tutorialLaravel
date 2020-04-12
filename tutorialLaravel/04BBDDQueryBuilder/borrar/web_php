@@ -1,0 +1,24 @@
+App\resources\routes
+
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+
+
+
+
+Route::get('/', function () {
+    //return view('welcome');
+    echo "<h1>hola mundo</h1>";
+});
+
+//ruta frutas
+//grupo de rutas todas la rutas dentro de la carpeta
+Route::group(['prefix' =>'frutas'],function(){
+    Route::get('index','FrutasController@index');
+    Route::get('detail/{id}','FrutasController@detail');
+    Route::get('crear','FrutasController@crear');
+    Route::post('save','FrutasController@save');
+    Route::get('delete/{id}','FrutasController@delete');
+});

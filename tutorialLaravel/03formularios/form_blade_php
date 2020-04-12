@@ -1,0 +1,19 @@
+app/Resources/Views/pelicula
+
+<h1>FormularioLaravel</h1>
+<form action="{{action('PeliculaController@recibir')}}" method="POST">
+    <!-- añadir este fichero por bloqueo y seguridad -->>
+    {{ csrf_field() }}
+    <label for ="nombre">Nombre</label>
+    <input name="nombre" type="text" placeholder="nombre"/>
+    
+    <label for ="email">email</label>
+    <input name="email" type="email" placeholder="email@email.es"/>
+    
+    <input type="submit" value="logIn"/>
+    
+</form>
+
+
+
+

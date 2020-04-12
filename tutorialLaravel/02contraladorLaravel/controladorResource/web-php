@@ -1,0 +1,25 @@
+<?php
+//http://aprendiendo-laravel.com/usuario
+//http://aprendiendo-laravel.com/usuario/create
+
+use Illuminate\Support\Facades\Route;
+
+
+
+
+Route::get('/', function () {
+    //return view('welcome');
+    echo "<h1>hola mundo</h1>";
+});
+
+//llamar metodo resource
+Route::resource('usuario', 'UsuarioController');
+
+//poner nombre especifico a direccion de controlador
+//consola php artisan route:list
+//  | GET|HEAD  | detalle                | detalle.pelicula | App\Http\C
+Route::get('/detalle',[
+    'uses' => 'PeliculaController@detalle',
+    'as' => 'detalle.pelicula'
+]);
+

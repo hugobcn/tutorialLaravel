@@ -1,0 +1,15 @@
+app/resouces/views/fruta
+
+<h1>{{$fruta->nombre}}</h1>
+
+<p>{{$fruta->descripcion}} </p>
+
+<a href="{{ action('FrutasController@delete', ['id' => $fruta->id])}}">Eliminar</a>
+<br>
+<a href="{{ action('FrutasController@edit', ['id' => $fruta->id])}}">Actualizar</a>
+    
+
+
+
+
+

@@ -1,0 +1,24 @@
+app/routes/
+http://aprendiendo-laravel.com/formulario
+
+
+<?php
+
+use Illuminate\Support\Facades\Route;
+
+
+
+
+
+Route::get('/', function () {
+    //return view('welcome');
+    echo "<h1>hola mundo</h1>";
+});
+//pagina formulario
+Route::get('/formulario', 'PeliculaController@formulario');
+//recibir respuesta
+Route::post('/recibir', 'PeliculaController@recibir');
+
+
+
+

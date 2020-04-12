@@ -1,0 +1,50 @@
+app/Http/Controllers
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+class FrutasController extends Controller
+{ 
+    
+    public function edit($id){
+        //extraer registro id
+        $fruta = DB::table('frutas')-> where('id',$id)->first();
+        //objeto paso a vista y rellenarlo
+        return view('fruta.crear',[
+            'fruta' => $fruta
+            
+        ]);
+    }
+    
+    
+    public function update(Request  $request) {
+        $id = $request->input('id');
+        //var_dump($id);
+        //die();
+        $fruta = DB::table('frutas')
+                -> where('id',$id)
+                -> update(array(
+                     'nombre' => $request->input('nombre'),
+                     'descripcion' => $request->input('descripcion'),
+                     'precio' => $request->input('precio'),
+                     'fecha' => date('Y-m-d')
+                 ));
+        
+        //var_dump(DB::table('frutas')->where('id','=',$id)->first());
+        //die();
+        
+       return redirect()->action('FrutasController@index')->with('status','OK, update correctamente' );
+        
+        
+    }
+}
+
+
+
+
+
+

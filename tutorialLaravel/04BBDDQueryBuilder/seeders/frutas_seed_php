@@ -1,0 +1,32 @@
+/database/seeds/
+
+
+php artisan db:seed --class=frutas_seed
+
+<?php
+
+use Illuminate\Database\Seeder;
+
+class frutas_seed extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+	//date('Y-m-d') == curdate()
+        for($i=0;$i<=20;$i++)
+        {
+            DB::table('frutas')->insert(array(
+                'nombre' =>  'Cereza '.$i,
+                'descripcion'=> 'cereza de picota ecologica '.$i,
+                'precio' => $i,
+                'fecha'=> date('Y-m-d')
+                    ));
+        }
+        
+        $this->command->info('tabla fruta rellenada');
+    }
+}

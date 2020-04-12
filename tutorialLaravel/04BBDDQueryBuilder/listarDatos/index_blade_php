@@ -1,0 +1,16 @@
+App\resources\views\fruta
+
+<h1>ListadoFrutas</h1>
+
+<ul>
+    @foreach($frutas as $fruta)
+    
+        <li>
+    
+        
+        {{$fruta->nombre}} 
+    
+    </li>
+    @endforeach
+    
+</ul>

@@ -1,0 +1,18 @@
+App\resources\views\fruta
+
+<h1>ListadoFrutas</h1>
+
+<h3><a href="{{action('FrutasController@crear')}}">crear fruta</a></h3>
+
+<ul>
+    @foreach($frutas as $fruta)
+    <li>
+    <a href="{{action('FrutasController@detail',['id'=> $fruta->id])}}">
+        
+        {{$fruta->nombre}} 
+    </a>
+    </li>
+    @endforeach
+    
+</ul>
+
